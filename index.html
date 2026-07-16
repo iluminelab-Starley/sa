@@ -14,7 +14,7 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Background Temático Premium: Textura de asfalto tecnológico */
+        /* Background Premium */
         .bg-nicho-auto {
             background-color: #020617;
             background-image: 
@@ -27,7 +27,7 @@
 </head>
 <body class="bg-nicho-auto text-slate-100 min-h-screen selection:bg-blue-500 selection:text-white">
 
-    <!-- Header Simples para Foco Total na Conversão -->
+    <!-- Header Simples -->
     <header class="py-6 border-b border-slate-900/60 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
             <div class="text-xl font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
@@ -42,13 +42,12 @@
     <!-- Seção Principal -->
     <main class="relative overflow-hidden py-12 md:py-20">
         
-        <!-- Detalhe de iluminação como se fossem faróis no fundo -->
         <div class="absolute top-20 left-10 w-[300px] h-[300px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none"></div>
         <div class="absolute bottom-10 right-10 w-[300px] h-[300px] bg-cyan-600/10 blur-[150px] rounded-full pointer-events-none"></div>
 
         <div class="max-w-6xl mx-auto px-4 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <!-- Coluna Esquerda: Conteúdo e Coberturas -->
+            <!-- Coluna Esquerda: Informações -->
             <div class="lg:col-span-7 space-y-8">
                 <div class="inline-flex items-center gap-2 bg-blue-500/10 text-blue-400 border border-blue-500/20 px-3 py-1.5 rounded-lg text-sm font-semibold">
                     <i class="fa-solid fa-shield-halved"></i> GUIA EXCLUSIVO E GRATUITO
@@ -64,7 +63,7 @@
 
                 <hr class="border-slate-900">
 
-                <!-- Coberturas -->
+                <!-- Lista de Benefícios/Coberturas -->
                 <div>
                     <h3 class="text-slate-300 font-bold uppercase tracking-wider text-xs mb-4">Veja as coberturas essenciais explicadas em detalhes no guia:</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -105,30 +104,80 @@
                 </div>
             </div>
 
-            <!-- Coluna Direita: Caixa de Chamada Simplificada de Alta Conversão -->
+            <!-- Coluna Direita: Formulário Nativo Integrado -->
             <div class="lg:col-span-5">
-                <div class="bg-slate-900/80 border border-slate-800 p-8 md:p-10 rounded-3xl shadow-2xl backdrop-blur-md relative text-center flex flex-col justify-center items-center min-h-[380px]">
+                <div class="bg-slate-900/80 border border-slate-800 p-6 md:p-8 rounded-3xl shadow-2xl backdrop-blur-md relative">
                     <div class="absolute -top-3 right-6 bg-blue-500 text-slate-950 font-bold text-xs uppercase px-3 py-1 rounded-full shadow-md">
-                        Material Grátis
+                        Download Gratuito
                     </div>
 
-                    <div class="p-4 rounded-full bg-blue-500/10 text-blue-400 mb-6 text-3xl animate-bounce">
-                        <i class="fa-solid fa-file-pdf"></i>
-                    </div>
+                    <h2 class="text-xl font-bold text-white mb-2">Receber Guia Grátis</h2>
+                    <p class="text-xs text-slate-400 mb-6">Insira seus dados abaixo para liberar o acesso imediato ao material.</p>
 
-                    <h2 class="text-2xl font-extrabold text-white mb-3">Guia Digital Liberado!</h2>
-                    <p class="text-sm text-slate-400 mb-8 leading-relaxed">
-                        Preencha o formulário rápido na próxima página para garantir o seu exemplar e economizar no seu próximo seguro.
-                    </p>
+                    <!-- Formulário apontando para o endpoint correto do funil básico do Systeme.io -->
+                    <form action="https://iluminelab.systeme.io/8e2a073b" method="POST" class="space-y-4">
+                        
+                        <!-- Nome -->
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1.5">Nome Completo</label>
+                            <input type="text" name="first_name" required placeholder="Ex: Roberto Silva" class="w-full bg-slate-950 border border-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 rounded-xl px-4 py-3 text-sm text-white transition-all outline-none">
+                        </div>
 
-                    <!-- Botão de Redirecionamento Direto -->
-                    <a href="https://iluminelab.systeme.io/8e2a073b" class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-slate-950 font-extrabold py-4 px-6 rounded-xl text-sm uppercase tracking-wider transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-cyan-500/20 flex items-center justify-center gap-2 cursor-pointer">
-                        Baixar Guia Grátis Agora <i class="fa-solid fa-arrow-right"></i>
-                    </a>
+                        <!-- WhatsApp -->
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1.5">WhatsApp (com DDD)</label>
+                            <input type="tel" name="phone" required placeholder="Ex: (11) 99999-9999" class="w-full bg-slate-950 border border-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 rounded-xl px-4 py-3 text-sm text-white transition-all outline-none">
+                        </div>
 
-                    <p class="text-[10px] text-slate-500 mt-4">
-                        <i class="fa-solid fa-lock"></i> Conexão segura e livre de spam.
-                    </p>
+                        <!-- Email -->
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1.5">Seu Melhor E-mail</label>
+                            <input type="email" name="email" required placeholder="Ex: roberto@email.com" class="w-full bg-slate-950 border border-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 rounded-xl px-4 py-3 text-sm text-white transition-all outline-none">
+                        </div>
+
+                        <hr class="border-slate-800/80 my-4">
+
+                        <!-- PERGUNTA 1 DE QUALIFICAÇÃO (Dropdown Customizado) -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-blue-400 mb-1.5">1. Qual a situação atual do seu seguro?</label>
+                            <select name="pergunta_situacao_seguro" required class="w-full bg-slate-950 border border-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 rounded-xl px-4 py-3 text-sm text-white transition-all outline-none cursor-pointer">
+                                <option value="" disabled selected class="text-slate-500">Selecione uma opção...</option>
+                                <option value="Vencendo nos próximos 30 dias" class="bg-slate-950 text-white">Meu seguro está vencendo nos próximos 30 dias</option>
+                                <option value="Tenho seguro mas vence depois" class="bg-slate-950 text-white">Tenho seguro, mas o vencimento ainda demora</option>
+                                <option value="Nao tenho seguro atualmente" class="bg-slate-950 text-white">Não tenho seguro e quero apenas conhecer mais</option>
+                            </select>
+                        </div>
+
+                        <!-- PERGUNTA 2 DE QUALIFICAÇÃO (Dropdown Customizado) -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-blue-400 mb-1.5">2. Com que rapidez você precisa cotar?</label>
+                            <select name="pergunta_urgencia" required class="w-full bg-slate-950 border border-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 rounded-xl px-4 py-3 text-sm text-white transition-all outline-none cursor-pointer">
+                                <option value="" disabled selected class="text-slate-500">Selecione uma opção...</option>
+                                <option value="Preciso fechar imediatamente" class="bg-slate-950 text-white">Preciso de propostas comerciais imediatamente</option>
+                                <option value="Quero fazer cotacoes para planejar" class="bg-slate-950 text-white">Quero simular para comparar preços sem pressa</option>
+                                <option value="Apenas estudando opções" class="bg-slate-950 text-white">Apenas lendo o material, não pretendo contratar agora</option>
+                            </select>
+                        </div>
+
+                        <!-- Aceite LGPD -->
+                        <div class="pt-2">
+                            <label class="flex items-start gap-3 cursor-pointer group">
+                                <input type="checkbox" required class="mt-1 rounded border-slate-800 bg-slate-950 text-blue-500 focus:ring-0 focus:ring-offset-0 cursor-pointer">
+                                <span class="text-xs text-slate-400 group-hover:text-slate-300 transition-colors leading-relaxed">
+                                    Aceito receber o guia digital e concordo que meus dados sejam processados pela <strong>KI 360</strong> para contato comercial conforme a LGPD.
+                                </span>
+                            </label>
+                        </div>
+
+                        <!-- Botão de Envio -->
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-slate-950 font-extrabold py-4 px-6 rounded-xl text-sm uppercase tracking-wider transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-cyan-500/20 flex items-center justify-center gap-2 mt-4 cursor-pointer">
+                            Quero o Guia Grátis Agora <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                        <p class="text-[10px] text-center text-slate-500 mt-2">
+                            <i class="fa-solid fa-lock"></i> Seus dados estão 100% seguros e criptografados.
+                        </p>
+                    </form>
                 </div>
             </div>
 
@@ -138,7 +187,6 @@
     <!-- Rodapé -->
     <footer class="py-8 bg-slate-950/40 border-t border-slate-900/60 text-center text-xs text-slate-500">
         <p class="mb-2">© 2026 KI 360 - Todos os direitos reservados.</p>
-        <p>Desenvolvido para garantir a segurança do seu patrimônio com transparência e as melhores coberturas.</p>
     </footer>
 
 </body>
