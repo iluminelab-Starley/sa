@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia Seguro Auto Protetor - Baixe Grátis</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { font-family: 'Inter', sans-serif; }
@@ -37,7 +34,6 @@
     <main class="relative overflow-hidden py-12 md:py-20">
         <div class="max-w-6xl mx-auto px-4 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <!-- Coluna Esquerda -->
             <div class="lg:col-span-7 space-y-8">
                 <div class="inline-flex items-center gap-2 bg-blue-500/10 text-blue-400 border border-blue-500/20 px-3 py-1.5 rounded-lg text-sm font-semibold">
                     <i class="fa-solid fa-shield-halved"></i> GUIA EXCLUSIVO E GRATUITO
@@ -81,7 +77,6 @@
                 </div>
             </div>
 
-            <!-- Coluna Direita -->
             <div class="lg:col-span-5">
                 <div class="bg-slate-900/80 border border-slate-800 p-6 md:p-8 rounded-3xl shadow-2xl relative">
                     <h2 class="text-xl font-bold text-white mb-2">Receber Guia Grátis</h2>
@@ -148,6 +143,7 @@
             btn.disabled = true;
 
             const url = 'https://hook.us2.make.com/pplr4kn98i1g6pkjguft3ar0tacvrxmd';
+            
             const payload = JSON.stringify({
                 first_name: document.getElementById('first_name').value,
                 phone: document.getElementById('phone').value,
@@ -156,36 +152,17 @@
                 pergunta_urgencia: document.getElementById('pergunta_urgencia').value
             });
 
-            // ESTRATÉGIA 1: Envio assíncrono blindado contra bloqueio de segurança local (CORS)
-            const blob = new Blob([payload], { type: 'application/json' });
-            navigator.sendBeacon(url, blob);
+            // Envio robusto em background independente de restrições de CORS
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            
+            xhr.onreadystatechange = function () {
+                // Avança o usuário de qualquer forma após despachar a requisição
+                window.location.href = "https://iluminelab.systeme.io/8e2a073b";
+            };
 
-            // ESTRATÉGIA 2: Envio clássico fallback via formulário oculto direto
-            try {
-                const targetForm = document.createElement('form');
-                targetForm.method = 'POST';
-                targetForm.action = url;
-                targetForm.style.display = 'none';
-
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = 'data';
-                input.value = payload;
-
-                targetForm.appendChild(input);
-                document.body.appendChild(targetForm);
-                
-                // Envia em background
-                const xhr = new XMLHttpRequest();
-                xhr.open("POST", url, true);
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.send(payload);
-            } catch(err) {}
-
-            // Aguarda uma fração de segundo apenas para garantir a saída dos dados do seu PC e avança
-            setTimeout(function() {
-                window.location.href = "https://iluminelab.systeme.io/8e2a073b";[cite: 1]
-            }, 400);
+            xhr.send(payload);
         });
     </script>
 </body>
