@@ -155,9 +155,10 @@
             };
 
             try {
-                // ENVIO SEGURO VIA WEBHOOK CONFIGURADO
+                // ENVIO SEGURO VIA WEBHOOK COM MODO NO-CORS ATIVADO
                 await fetch('https://hook.us2.make.com/pplr4kn98i1g6pkjguft3ar0tacvrxmd', {
                     method: 'POST',
+                    mode: 'no-cors',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
